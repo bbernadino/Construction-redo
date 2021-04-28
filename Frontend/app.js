@@ -1,12 +1,19 @@
 import React from "react";
-import Login from "./components/Auth/Login";
+import { Route, Switch } from 'react-router-dom';
+import GlobalStyle from './globalStyles';
+import login from "./pages/login";
+import machinePage from './pages/machines';
 
 const App = () => {
   return (
     // todo: get routing done
-    <div>
-      <Login />
-    </div>
+    <>
+      <GlobalStyle />
+      <Switch>
+        <Route path='/login' component={machinePage} />
+        <Route path='/' component={login} />
+      </Switch>
+    </>
   );
 };
 
